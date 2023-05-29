@@ -1,0 +1,37 @@
+format: jb-book
+root: intro
+parts:
+- caption: Getting Started
+  chapters:
+  - file: predict_cli
+  - file: examples
+- caption: Chapters
+  chapters:
+  - file: predict_api
+  - file: compute
+  - file: models
+  - file: datasets
+  - file: train
+  - file: cli_help
+  - file: plugins_overview
+  - file: faq
+- caption: Tutorials
+  chapters:
+  - file: plugins_custom
+  - file: plugins_animalpose
+  - file: plugins_wholebody
+  - file: plugins_apollocar3d
+  - file: plugins_crowdpose
+  - file: plugins_nuscenes
+  - file: tutorial_opencv
+  - file: plugins_cifar10
+- caption: Reference
+  chapters:
+  - file: moduledocs
+  - file: bibliography
+- caption: Development
+  chapters:
+  - file: dev
+  - file: performance
+  - title: GitHub
+    url: https://github.com/vita-epfl/openpifpaf

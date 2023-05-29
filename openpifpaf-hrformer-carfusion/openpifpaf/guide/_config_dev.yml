@@ -1,0 +1,64 @@
+# Book settings
+title: OpenPifPaf Guide DEV
+author: <a href="https://www.epfl.ch/labs/vita/">EPFL VITA</a> and <a href="https://github.com/vita-epfl/openpifpaf/graphs/contributors">contributors</a>.
+copyright: "2020-2023"
+email: epfl.vita@gmail.com
+logo: logo.png
+exclude_patterns: [readme.md]
+
+# latex:
+#   latex_documents:
+#     targetname: book.tex
+
+parse:
+  myst_enable_extensions:
+    # don't forget to list any other extensions you want enabled,
+    # including those that are enabled by default!
+    - amsmath
+    - colon_fence
+    # - deflist
+    - dollarmath
+    # - html_admonition
+    # - html_image
+    - linkify
+    # - replacements
+    # - smartquotes
+    - substitution
+
+# Information about where the book exists on the web
+repository:
+  url                       : https://github.com/vita-epfl/openpifpaf  # Online location of your book
+  path_to_book              : guide  # Optional path to your book, relative to the repository root
+  branch                    : main  # Which branch of the repository should be used when creating links (optional)
+
+launch_buttons:
+  binderhub_url             : "https://mybinder.org"  # The URL for your BinderHub (e.g., https://mybinder.org)
+
+sphinx:
+  extra_extensions: [sphinx.ext.autodoc]
+  config:
+    autodoc_member_order: bysource
+    autodoc_inherit_docstrings: False
+    language: en
+    html_favicon: favicon.png
+    html_theme_options:
+      extra_navbar: This is the dev version of the Guide. Here is the <a href="https://vita-epfl.github.io/openpifpaf">stable version</a>.
+      extra_footer: |
+        <p>Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>.</p>
+      home_page_in_toc: True
+      launch_buttons:
+        binderhub_url: https://mybinder.org
+      path_to_docs: guide
+      repository_branch: main
+      repository_url: https://github.com/vita-epfl/openpifpaf
+      toc_title: "On this page"
+      use_fullscreen_button: False
+      use_issues_button: True
+      use_repository_button: True
+
+execute:
+  timeout: 600
+  stderr_output: error
+
+bibtex_bibfiles:
+  - references.bib

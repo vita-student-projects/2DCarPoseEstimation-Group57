@@ -1,0 +1,7 @@
+include versioneer.py
+exclude src/openpifpaf/_cpp.so
+recursive-include src/openpifpaf/csrc *
+include src/openpifpaf/_version.py
+include pyproject.toml
+include LICENSE
+recursive-include docs LICENSE*
