@@ -18,7 +18,7 @@ Sadly, working with Occlusion-Net has proven to be way more difficult than we th
 We have integrated the use of the OpenPifPaf code in our work, enhancing it by incorporating a High Resolution (HR) Transformer into the backbone of our algorithm. Further, we have modified the dataset to ensure a comprehensive representation of vehicles. This includes not just the visible parts, but also those parts that are typically obscured, thereby enabling a more accurate and holistic understanding of the subject.
 
 
-![Shema](https://d3i71xaburhd42.cloudfront.net/8624d93a9a6c568b012e58a70daa7275e5770024/4-Figure5-1.png)
+![Shema](https://media.arxiv-vanity.com/render-output/6205766/images/model.png)
 
 
 HRFormer is an architecture in machine learning that has been created recently and consists of a network branching out into multiple parallel lines. It is said to reduce both computational cost and memory and results in good performances when tested on the COCO dataset.
