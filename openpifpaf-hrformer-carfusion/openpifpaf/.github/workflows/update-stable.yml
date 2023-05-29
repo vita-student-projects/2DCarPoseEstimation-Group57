@@ -1,0 +1,21 @@
+name: update-stable
+
+on:
+  release:
+    types:
+      - released
+
+jobs:
+  update-stable:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: main
+        fetch-depth: 0
+    - name: Push to stable branch
+      run: |
+        git pull
+        git checkout stable
+        git merge main -m "merge main"
+        git push
