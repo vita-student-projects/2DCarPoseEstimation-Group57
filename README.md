@@ -243,7 +243,7 @@ Detection Rate [scaled]: 62.110065 %
 ```
 
 
-Average Precision (AP) and Average Recall (AR) for individual keypoint or instance categories. 
+The keypoint detection task COCO is scored like an object detection task, with average precision (AP) and average recall (AR)
 
 - Average Precision (AP):
 AP measures the accuracy and precision of the model's predictions for a specific category, such as a keypoint or an object class. It calculates the precision at different levels of recall by varying a threshold for considering a prediction as a true positive. AP ranges from 0 to 1, where a higher value indicates better performance. 
