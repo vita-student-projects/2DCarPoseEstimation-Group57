@@ -242,6 +242,16 @@ Mean Pixel Error [scaled] : 3.126907
 Detection Rate [scaled]: 62.110065 %
 ```
 
+
+Average Precision (AP) and Average Recall (AR) for individual keypoint or instance categories. 
+
+- Average Precision (AP):
+AP measures the accuracy and precision of the model's predictions for a specific category, such as a keypoint or an object class. It calculates the precision at different levels of recall by varying a threshold for considering a prediction as a true positive. AP ranges from 0 to 1, where a higher value indicates better performance. 
+- Average Recall (AR):
+AR measures the model's ability to detect instances of a specific category at various levels of precision. It calculates the recall at different levels of precision by varying a threshold for considering a prediction as a true positive.
+
+AP and AR are in range from 0 to 1, where a higher value indicates better performance.
+
 # Conclusion
 `here a short conclusion`
 
