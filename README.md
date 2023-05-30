@@ -219,7 +219,7 @@ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.064
 
 Final Results: 
 Mean Pixel Error [scaled] : 3.432623 
-Detection Rate [scaled]: 49.254017 
+Detection Rate [scaled]: 49.254017 %
 ```
 
 ## RESULT with SHUFFLENET:
@@ -239,7 +239,7 @@ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.000
 Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.153
 
 Mean Pixel Error [scaled] : 3.126907 
-Detection Rate [scaled]: 62.110065 
+Detection Rate [scaled]: 62.110065 %
 ```
 
 # Conclusion
