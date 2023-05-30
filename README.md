@@ -209,12 +209,10 @@ Evaluate annotation type *keypoints*
 Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.050
 Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.125
 Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.007
-Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.000
 Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.050
 Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.075
 Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.160
 Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.031
-Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.000
 Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.064
 
 Final Results: 
@@ -230,12 +228,10 @@ Evaluate annotation type *keypoints*
 Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.113
 Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.265
 Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.018
-Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.000
 Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.115
 Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.159
 Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.343
 Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.070
-Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.000
 Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.153
 
 Mean Pixel Error [scaled] : 3.126907 
