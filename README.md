@@ -202,41 +202,45 @@ Most of these options have default values and do not need to be set if otherwise
 # Results
 `Qualitative and Quantitative results of your experiments.`
 
-RESULT with HR-FORMER:
+## RESULT with HR-FORMER:
 
 Evaluate annotation type *keypoints*
+```
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.050
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.125
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.007
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.050
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.075
+Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.160
+Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.031
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.064
 
- Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.050
- Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.125
- Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.007
- Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.000
- Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.050
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.075
- Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.160
- Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.031
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.000
- Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.064
 Final Results: 
-Mean Pixel Error [scaled] : 3.432623 [2.904190] 
-Detection Rate [scaled]: 49.254017 [41.698546]
+Mean Pixel Error [scaled] : 3.432623 
+Detection Rate [scaled]: 49.254017 
+```
 
-
-RESULT with SHUFFLENET:
+## RESULT with SHUFFLENET:
 
 Evaluate annotation type *keypoints*
- Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.113
- Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.265
- Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.018
- Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.000
- Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.115
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.159
- Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.343
- Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.070
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.000
- Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.153
-INFO:openpifpaf.plugins.carfusion.metrics:Final Results: 
-Mean Pixel Error [scaled] : 3.126907 [2.803727] 
-Detection Rate [scaled]: 62.110065 [56.474397]
+
+```
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.113
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.265
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.018
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.000
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.115
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.159
+Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.343
+Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.070
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.000
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.153
+
+Mean Pixel Error [scaled] : 3.126907 
+Detection Rate [scaled]: 62.110065 
+```
 
 # Conclusion
 `here a short conclusion`
