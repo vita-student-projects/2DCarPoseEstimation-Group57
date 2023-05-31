@@ -88,6 +88,10 @@ setuptools.setup(
         'torchvision==0.10.0',
         'pillow!=8.3.0',  # exclusion torchvision 0.10.0 compatibility
         'dataclasses; python_version<"3.7"',
+        'timm>=0.4.9',  # For Swin Transformer and XCiT
+        'einops>=0.3',  # required for BotNet
+        'pycocotools>=2.0.1,!=2.0.5,!=2.0.6',  # pre-install cython (currently incompatible with numpy 1.18 or above)
+        'scipy',
     ],
     extras_require={
         'backbones': [

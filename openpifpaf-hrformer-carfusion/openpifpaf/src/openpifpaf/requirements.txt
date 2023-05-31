@@ -1,0 +1,11 @@
+numpy
+cython
+googledrivedownloader
+shapely
+glob2
+opencv-python
+shapely
+requests
+pycocotools
+matplotlib
+scikit-image

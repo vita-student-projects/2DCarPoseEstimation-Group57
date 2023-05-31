@@ -4,8 +4,8 @@ import torch
 
 
 def register_ops():
-    #lib_dir = os.path.dirname(__file__)
-    lib_dir = r"/home/koffler/Desktop/openpifpaf/openpifpaf/build/lib.linux-x86_64-3.7/openpifpaf"
+    lib_dir = os.path.dirname(__file__)
+    #lib_dir = r"/home/koffler/Desktop/openpifpaf/openpifpaf/build/lib.linux-x86_64-3.7/openpifpaf"
     if hasattr(os, 'add_dll_directory'):  # for Windows
         import ctypes  # pylint: disable=import-outside-toplevel
 
