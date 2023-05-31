@@ -308,7 +308,9 @@ Detection Rate [scaled]: 60.617481
 <sup>Result of shufflnet-24keypoints (1st image) and our model (2nd image)</sup>
 </p>
 
- There is some interesting results, it seems that our model became less powerfull to detect cars but it became very good in precision for long distance vehicule. From the model trained with 30 epoch, we see that the Mean Pixel Error was higher that our new model but the detection rate was better. The Mean Pixel Error is 0 when the model don't detect any car. It mean that the model tends to prefer to not detect a car if it's not very sure about it. It prefer to not showing than showing a bad prediction and we could say that our final model is not better but if we check the average precision (AP) and the average recall (AR) everything is better and the precision and the recall above 75% double.
+ There is some interesting results, it seems that our model became less powerfull to detect cars but it became very good in precision for long distance vehicule. From the model trained with 30 epoch, we see that the Mean Pixel Error was higher that our new model but the detection rate was better. The Mean Pixel Error is 0 when the model don't detect any car, it mean that the model tends to prefer to not detect a car if it's not very sure about it. It prefer to not showing than showing a bad prediction and we could say that our final model is not better but if we check the average precision (AP) and the average recall (AR) everything is better and the precision and the recall above 75% double.
+
+ Compare to the original model from openpifpaf, we have some much less cars detected but we have most of the time better result in long distance detection in cross road intersection, that's because our dataset is essentially cross road intersection.  
 
 # Conclusion
 `here a short conclusion`
