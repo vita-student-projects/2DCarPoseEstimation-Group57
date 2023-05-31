@@ -308,7 +308,7 @@ Detection Rate [scaled]: 60.617481
 <sup>Result of shufflnet-24keypoints (1st image) and our model (2nd image)</sup>
 </p>
 
- There is some interesting results, it seems that our model became less powerfull to detect cars but it became very good in precision for long distance vehicule. From the model trained with 30 epoch, we see that the Mean Pixel Error was higher that our new model but the detection rate was better. The Mean Pixel Error is 0 when the model don't detect any car, it mean that the model tends to prefer to not detect a car if it's not very sure about it. It prefer to not showing than showing a bad prediction and we could say that our final model is not better but if we check the average precision (AP) and the average recall (AR) everything is better and the precision and the recall above 75% double.
+ There is some interesting results, it seems that our model became less powerfull to detect cars but it became very good in precision for long distance vehicule. From the model trained with 30 epoch, we see that the Mean Pixel Error was worst that our new model but the detection rate was better. The Mean Pixel Error is 0 when the model don't detect any car, it mean that the model tends to prefer to not detect a car if it's not very sure about it. It prefer to not showing than showing a bad prediction and we could say that our final model is not better but if we check the average precision (AP) and the average recall (AR) everything is better and the precision and the recall above 75% double.
 
  Compare to the original model from openpifpaf, we have some much less cars detected but we have most of the time better result in long distance detection in cross road intersection, that's because our dataset is essentially cross road intersection.  
 
@@ -324,9 +324,29 @@ Detection Rate [scaled]: 60.617481
 go into src with the terminal and do:
 ```sh
 python3 -m openpifpaf.predict \
-  --checkpoint outputs/shufflenetv2k16-230524-164104-carfusionkp-a09acb3d.pkl \
-  --save-all --image-output all-images/overfitted.jpeg \
+  --checkpoint <path model> \
+  --save-all --image-output <path output> \
+  <path image>
+```
+```sh
+python3 -m openpifpaf.eval --dataset=carfusionkp --checkpoint <path of the model>
+```
+
+for example we can do: 
+
+```sh
+python3 -m openpifpaf.predict \
+  --checkpoint model/shufflenet_60epoch.pkl \
+  --save-all --image-output all-images/final_image.jpeg \
   voiture.jpg
 ```
+
+
+
 Example result:
-![example image cars](https://raw.githubusercontent.com/openpifpaf/openpifpaf/main/docs/peterbourg.jpg.predictions.jpeg)
+
+<p align="center">
+<img src="images/image_example.jpeg", width="900">
+<br>
+<sup>Example result with the command openpifpaf.predict</sup>
+</p>
