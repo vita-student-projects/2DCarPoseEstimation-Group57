@@ -306,12 +306,20 @@ Detection Rate: 60.617481
 <sup>Result of shufflnet-24keypoints (1st image) and our model (2nd image)</sup>
 </p>
 
- There is some interesting results, it seems that our model became less powerfull to detect cars but it became very good in precision for long distance vehicule. From the model trained with 30 epoch, we see that the Mean Pixel Error was higher that our new model but the detection rate was better. The Mean Pixel Error is 0 when the model don't detect any car. It mean that the model tends to prefer to not detect a car if it's not very sure about it. It prefer to not showing than showing a bad prediction and we could say that our final model is not better but if we check the average precision (AP) and the average recall (AR) everything is better and the precision and the recall above 75% double.
+ There is some interesting results, it seems that our model became less powerfull to detect cars but it became very good in precision for long distance vehicule. We can see the different here with the model from openpifpaf and our, the closer car is not detected and only 2 cars are detected at the background but it detected very well.
+ 
+ From the model trained with 30 epoch, we see that the Mean Pixel Error was higher that our new model but the detection rate was better and we have some ideas to explain it. The Mean Pixel Error is 0 when the model don't detect any car, it mean that the model tends to prefer to not detect a car if it's not very sure about it. It prefer to not showing it than showing a bad prediction. We could say that our final model is not better that the one with 30 epoch but if we check the average precision (AP) and the average recall (AR) everything is better, and even twice better for the precision and the recall above 75%.
 
  Compare to the original model from openpifpaf, we have some much less cars detected but we have most of the time better result in long distance detection in cross road intersection, that's because our dataset is essentially cross road intersection.  
 
+ Our model is not good on normal road when the vehicule is behind other vehicule but perform well on cross road section.
+
+ See the video on this link to see some result that show what we said: 
+ https://www.youtube.com/watch?v=DdKxXEWcQBM
+
 # Conclusion
-`here a short conclusion`
+We saw here that using a hr-former was not adapted in our case and wasn't very efficient with our dataset. Our dataset was not very adapted to train a model on a normal road but has very good potential to increase the performance of precision of a autonomous vehicule at cross street section. 
+We could improve the model with more epoch and the best would be to mix two type of data, a dataset on the road and this dataset that is road cross section. 
 
 
 
@@ -341,7 +349,8 @@ python3 -m openpifpaf.predict \
 
 ###############################################
 
-HERE ARE THE WEIGTHS: https://drive.google.com/drive/folders/1U3Xl_wtkL32DrRsVCbQr12HVaw8iHuJQ?usp=sharing
+HERE ARE THE WEIGTHS: 
+https://drive.google.com/drive/folders/1U3Xl_wtkL32DrRsVCbQr12HVaw8iHuJQ?usp=sharing
 
 ################################################
 
