@@ -367,3 +367,10 @@ Example result:
 <br>
 <sup>Example result with the command openpifpaf.predict</sup>
 </p>
+
+<p align="center">
+<img src="images/animation.gif", width="500">
+<br>
+<sup>Animation made with the command openpifpaf.video</sup>
+</p>
+
