@@ -256,6 +256,7 @@ So we decide to keep the shufflenet and to continue to train it.
 
 Evaluate annotation type *keypoints*
 
+```
  Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.128
  Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.271
  Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.063
@@ -267,7 +268,7 @@ Evaluate annotation type *keypoints*
 
 Mean Pixel Error [scaled] : 2.939359 
 Detection Rate [scaled]: 60.617481 
-
+```
 
 # Conclusion
 `here a short conclusion`
