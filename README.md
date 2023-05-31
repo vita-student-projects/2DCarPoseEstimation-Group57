@@ -351,6 +351,7 @@ We saw here that using a HR-Former was not adapted in our case and wasn't very e
 There are many ways in which we could improve our model, that would require more resources and time.
 We could first improve the model by training in for more epochs, with hopefully good results along the way.
 We have decided to use smaller versions of HR-Former and ShuffleNet and this of course results in less optimal solutions. With more time and resources, we could train our model with larger architectures for more robust solution.
+Even within the same architecture, there are many options that can greatly impact the behaviour of the training part. With more time, we could have explored these options and find the right parameters for this particular task and dataset.
 Also, using the full dataset instead of only part of it would result in a greater diversity of situations and thus better performances. We could also mix two types of data, a dataset on the road and this dataset that is road cross section for even better results.
 And to get better result on video, we could use something like a Kalman-filter to keep the value of the keypoints when the car is moving.
 
