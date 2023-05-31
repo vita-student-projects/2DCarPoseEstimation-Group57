@@ -1,5 +1,5 @@
 # 2DCarPoseEstimation-Group57
-2DCarEstimation with HR Former and shufflenet backbone in openpifpaf with Carfusion dataset
+2DCarPoseEstimation with HR Former and shufflenet backbone in openpifpaf with Carfusion dataset
 
 
 # Introduction
