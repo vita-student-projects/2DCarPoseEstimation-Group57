@@ -202,7 +202,7 @@ Most of these options have default values and do not need to be set if otherwise
 # Results
 `Qualitative and Quantitative results of your experiments.`
 
-## RESULT with HR-FORMER:
+## RESULTS with HR-FORMER after 30 epoch:
 
 Evaluate annotation type *keypoints*
 ```
@@ -220,7 +220,7 @@ Mean Pixel Error [scaled] : 3.432623
 Detection Rate [scaled]: 49.254017 %
 ```
 
-## RESULT with SHUFFLENET:
+## RESULTS with SHUFFLENET after 30 epoch:
 
 Evaluate annotation type *keypoints*
 
@@ -247,6 +247,27 @@ AP measures the accuracy and precision of the model's predictions for a specific
 AR measures the model's ability to detect instances of a specific category at various levels of precision. It calculates the recall at different levels of precision by varying a threshold for considering a prediction as a true positive.
 
 AP and AR are in range from 0 to 1, where a higher value indicates better performance.
+
+As seen in the results above, the shufflenet is really better to detect the car 62%>49% but is also better twice better in AP and AR.
+
+So we decide to keep the shufflenet and to continue to train it.
+
+## RESULTS with SHUFFLENET after 60 epoch
+
+Evaluate annotation type *keypoints*
+
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.128
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.271
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.063
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.130
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.190
+ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.381
+ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.130
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.187
+
+Mean Pixel Error [scaled] : 2.939359 
+Detection Rate [scaled]: 60.617481 
+
 
 # Conclusion
 `here a short conclusion`
