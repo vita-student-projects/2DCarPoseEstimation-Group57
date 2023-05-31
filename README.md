@@ -175,7 +175,7 @@ You can verify that the code worked correctly by checking if both test and train
 
 # Training
 
-Other important files that can be used are train.py and inference.py, both can be find in /src/openpifpaf/.
+Other important files that can be used are train.py and predict.py, both can be find in /src/openpifpaf/.
 
 The training part of the model can be done with several base networks, datasets and checkpoints.
 
