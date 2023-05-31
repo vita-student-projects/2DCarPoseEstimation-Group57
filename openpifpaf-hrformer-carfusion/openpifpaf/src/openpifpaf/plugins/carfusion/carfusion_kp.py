@@ -38,11 +38,11 @@ from .metrics import MeanPixelError
 
 class CarfusionKp(openpifpaf.datasets.DataModule, openpifpaf.Configurable):
     # cli configurable
-    train_annotations = 'openpifpaf/dataCarFusion/annotations/car_keypoints_train.json'
-    val_annotations = 'openpifpaf/dataCarFusion/annotations/car_keypoints_test.json'
+    train_annotations = 'dataCarFusion/annotations/car_keypoints_train.json'
+    val_annotations = 'dataCarFusion/annotations/car_keypoints_test.json'
     eval_annotations = val_annotations
-    train_image_dir = 'openpifpaf/dataCarFusion/train/'
-    val_image_dir = 'openpifpaf/dataCarFusion/test/'
+    train_image_dir = 'dataCarFusion/train/'
+    val_image_dir = 'dataCarFusion/test/'
     eval_image_dir = val_image_dir
 
     square_edge = 513
