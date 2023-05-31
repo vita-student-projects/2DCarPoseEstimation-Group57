@@ -37,7 +37,9 @@ In the preparation of our goal, we implemented a CarFusion plugin in OpenPifPaf 
 `What are the experiments you conducted? What are the evaluation
 metrics?`
 
-We decided to find the best model backbone to adapt with the new dataset that we decided to use (see info below) so we took our attention to the shufflenet of openpifpaf and the hr-former. We made some training run with this two backbones and we have evalutated with a testset to find the best one to continue with. To perform wich model is the best, we used some metrics:
+We decided to find the best model backbone to adapt with the new dataset that we decided to use (see info below) so we took our attention to the shufflenet of openpifpaf and the hr-former. We made some training run with this two backbones and we have evalutated with a testset to find the best one to continue with. We used final weights of this different model as a checkpoint to start training our models, like that the model don't start with random weights and it can perform the behaviour easier and it just need to understand our heads.
+
+To know wich model is the best, we used some metrics:
 
 The keypoint detection task COCO is scored like an object detection task, with average precision (AP) and average recall (AR)
 
@@ -237,7 +239,7 @@ Detection Rate [scaled]: 49.254017 %
 
 
 <p align="center">
-<img src="images/hrformer.jpeg", width="900">
+<img src="images/image_hrformer.jpeg", width="900">
 <br>
 <sup>Result of HR_former train with 30 epoch</sup>
 </p>
@@ -263,25 +265,13 @@ Detection Rate [scaled]: 62.110065 %
 
 
 <p align="center">
-<img src="images/shufflenet_v1.jpeg", width="900">
+<img src="images/image_shufflnetv1.jpeg", width="900">
 <br>
 <sup>Result of shufflnet train with 30 epoch</sup>
 </p>
 
-
-The keypoint detection task COCO is scored like an object detection task, with average precision (AP) and average recall (AR)
-
-- Average Precision (AP):
-AP measures the accuracy and precision of the model's predictions for a specific category, such as a keypoint or an object class. It calculates the precision at different levels of recall by varying a threshold for considering a prediction as a true positive. AP ranges from 0 to 1, where a higher value indicates better performance. 
-- Average Recall (AR):
-AR measures the model's ability to detect instances of a specific category at various levels of precision. It calculates the recall at different levels of precision by varying a threshold for considering a prediction as a true positive.
-
-AP and AR are in range from 0 to 1, where a higher value indicates better performance.
-
-
 As seen in the results above, the shufflenet is really better to detect the car 62%>49% but is also better twice better in AP and AR.
-
-So we decide to keep the shufflenet and to continue to train it.
+Therefore we decide to keep the shufflenet and to continue to train it.
 
 ## RESULTS with SHUFFLENET after 60 epoch
 
@@ -302,15 +292,23 @@ Detection Rate [scaled]: 60.617481
 ```
 
 
-There is some interesting result
-
-
 <p align="center">
-<img src="images/shufflnet_v2.jpeg", width="900">
+<img src="images/image_shufflenetv2.jpeg", width="900">
 <br>
 <sup>Result of shufflnet train with 60 epoch</sup>
 </p>
 
+
+ # Analyse of results
+
+<p align="center">
+<img src="images/image_shufflenet_original.jpeg", width="900">
+<img src="images/shufflnet_v2.jpeg", width="900">
+<br>
+<sup>Result of shufflnet-24keypoints (1st image) and our model (2nd image)</sup>
+</p>
+
+ There is some interesting results, it seems that our model became less powerfull to detect cars but it became very good in precision for long distance vehicule. From the model trained with 30 epoch, we see that the Mean Pixel Error was higher that our new model but the detection rate was better. The Mean Pixel Error is 0 when the model don't detect any car. It mean that the model tends to prefer to not detect a car if it's not very sure about it. It prefer to not showing than showing a bad prediction and we could say that our final model is not better but if we check the average precision (AP) and the average recall (AR) everything is better and the precision and the recall above 75% double.
 
 # Conclusion
 `here a short conclusion`
