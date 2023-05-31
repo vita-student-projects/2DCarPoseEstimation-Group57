@@ -312,7 +312,7 @@ Detection Rate: 60.617481
 
  Compare to the original model from openpifpaf, we have some much less cars detected but we have most of the time better result in long distance detection in cross road intersection, that's because our dataset is essentially cross road intersection.  
 
- Our model is not good on normal road when the vehicule is behind other vehicule but perform well on cross road section.
+ Our model is not good on normal road when the vehicule is behind other vehicule but perform well on cross road section with long distance vehicule. For some reason it not detect all the time car that are very close but as we can see on video, the model detect it the frame just after.
 
  See the video on this link to see some result that show what we said: 
  https://www.youtube.com/watch?v=DdKxXEWcQBM
@@ -320,6 +320,7 @@ Detection Rate: 60.617481
 # Conclusion
 We saw here that using a hr-former was not adapted in our case and wasn't very efficient with our dataset. Our dataset was not very adapted to train a model on a normal road but has very good potential to increase the performance of precision of a autonomous vehicule at cross street section. 
 We could improve the model with more epoch and the best would be to mix two type of data, a dataset on the road and this dataset that is road cross section. 
+And to get better result on video, we could use something as a kalman-filter to keep the value of the keypoints when the car is moving.
 
 
 
