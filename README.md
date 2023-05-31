@@ -22,7 +22,7 @@ We have integrated the use of the OpenPifPaf code in our work, enhancing it by i
 
 
 HRFormer is an architecture in machine learning that has been created recently and consists of a network branching out into multiple parallel lines. It is said to reduce both computational cost and memory and results in good performances when tested on the COCO dataset.
-It can and has been used for human pose estimation, segmentation and classification.
+It can and has been used for human pose estimation, segmentation and classification. The implementation has been made thanks to the code available here : https://github.com/HRNet/HRFormer
 
 ![HRFormer](https://raw.githubusercontent.com/HRNet/HRFormer/main/cls/figures/HRFormer.png)
 
@@ -325,7 +325,7 @@ Detection Rate: 60.617481
 </p>
 
 
- # Analyse of results
+ # Analysis of the results
 
 <p align="center">
 <img src="images/image_shufflenet_original.jpeg", width="900">
