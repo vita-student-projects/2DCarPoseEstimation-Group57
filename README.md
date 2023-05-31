@@ -37,6 +37,22 @@ In the preparation of our goal, we implemented a CarFusion plugin in OpenPifPaf 
 `What are the experiments you conducted? What are the evaluation
 metrics?`
 
+We decided to find the best model backbone to adapt with the new dataset that we decided to use (see info below) so we took our attention to the shufflenet of openpifpaf and the hr-former. We made some training run with this two backbones and we have evalutated with a testset to find the best one to continue with. To perform wich model is the best, we used some metrics:
+
+The keypoint detection task COCO is scored like an object detection task, with average precision (AP) and average recall (AR)
+
+- Average Precision (AP):
+AP measures the accuracy and precision of the model's predictions for a specific category, such as a keypoint or an object class. It calculates the precision at different levels of recall by varying a threshold for considering a prediction as a true positive. AP ranges from 0 to 1, where a higher value indicates better performance. 
+- Average Recall (AR):
+AR measures the model's ability to detect instances of a specific category at various levels of precision. It calculates the recall at different levels of precision by varying a threshold for considering a prediction as a true positive.
+
+AP and AR are in range from 0 to 1, where a higher value indicates better performance.
+
+
+ - We used also the Mean Pixel Error and Detection Rate to choose the best model.
+
+
+
 # Dataset
 
 We use the dataset used in Occlusion-Net, CarFusion, that consists of 5 videos of cross street intersection with cars running through it and from which frames have been turned into jpg images and annotated.
@@ -149,8 +165,7 @@ This file is located in /src/openpifpaf/, as are any other useful files in this 
 ```
 pip install -r requirements.txt
 python dataset.py --path_dir dataCarFusion/train/ --output_dir dataCarFusion/annotations/ --output_filename car_keypoints_train.json
-python dataset.py --path_dir dataCarFusion/test/ --output_dir dataCarFusion/annotations/
---output_filename car_keypoints_test.json
+python dataset.py --path_dir dataCarFusion/test/ --output_dir dataCarFusion/annotations/ --output_filename car_keypoints_test.json
 ```
 
 You can verify that the code worked correctly by checking if both test and train annotations have been created under src/openpiafpaf/dataCarFusion/annotations/.
@@ -219,7 +234,18 @@ Final Results:
 Mean Pixel Error [scaled] : 3.432623 
 Detection Rate [scaled]: 49.254017 %
 ```
+<<<<<<< HEAD
 
+<p align="center">
+<img src="images/hrformer.jpeg", width="900">
+<br>
+<sup>Result of HR_former train with 30 epoch</sup>
+</p>
+
+
+=======
+
+>>>>>>> d4be15d6f0362331ab1eb434e52b0db6e6ff8f87
 ## RESULTS with SHUFFLENET after 30 epoch:
 
 Evaluate annotation type *keypoints*
@@ -238,6 +264,13 @@ Mean Pixel Error [scaled] : 3.126907
 Detection Rate [scaled]: 62.110065 %
 ```
 
+<<<<<<< HEAD
+<p align="center">
+<img src="images/shufflenet_v1.jpeg", width="900">
+<br>
+<sup>Result of shufflnet train with 30 epoch</sup>
+</p>
+=======
 
 The keypoint detection task COCO is scored like an object detection task, with average precision (AP) and average recall (AR)
 
@@ -247,6 +280,7 @@ AP measures the accuracy and precision of the model's predictions for a specific
 AR measures the model's ability to detect instances of a specific category at various levels of precision. It calculates the recall at different levels of precision by varying a threshold for considering a prediction as a true positive.
 
 AP and AR are in range from 0 to 1, where a higher value indicates better performance.
+>>>>>>> d4be15d6f0362331ab1eb434e52b0db6e6ff8f87
 
 As seen in the results above, the shufflenet is really better to detect the car 62%>49% but is also better twice better in AP and AR.
 
@@ -269,6 +303,19 @@ Evaluate annotation type *keypoints*
 Mean Pixel Error [scaled] : 2.939359 
 Detection Rate [scaled]: 60.617481 
 ```
+<<<<<<< HEAD
+
+There is some interesting result
+
+
+<p align="center">
+<img src="images/shufflnet_v2.jpeg", width="900">
+<br>
+<sup>Result of shufflnet train with 60 epoch</sup>
+</p>
+
+=======
+>>>>>>> d4be15d6f0362331ab1eb434e52b0db6e6ff8f87
 
 # Conclusion
 `here a short conclusion`
