@@ -65,11 +65,9 @@ Theses images have been annotated with 14 keypoints, some being visible and also
 
 The keypoints represent the 4 wheels, 4 lights, 4 roof corners of the car and the exhaust and center point. These two last points, although they are annotated, are not shown in the skeletons of the cars found, such as seen below:
 
-<p align="center">
+
 ![14 keypoints](https://www.cs.cmu.edu/~ILIM/projects/IM/CarFusion/cvpr2019/images/title/3.png)
-<br>
 <sup>image from the website of Carfusion dataset (https://www.cs.cmu.edu/~ILIM/projects/IM/CarFusion/cvpr2018/index.html</sup>
-</p>
 
 
 
