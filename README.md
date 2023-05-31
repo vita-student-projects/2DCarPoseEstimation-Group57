@@ -34,8 +34,7 @@ In the preparation of our goal, we implemented a CarFusion plugin in OpenPifPaf 
 ![OcclusionNet](https://www.cs.cmu.edu/~ILIM/projects/IM/CarFusion/cvpr2019/images/title_1.jpg)
 
 # Experimental Setup
-`What are the experiments you conducted? What are the evaluation
-metrics?`
+
 
 We decided to find the best model backbone to adapt with the new dataset that we decided to use (see info below) so we took our attention to the shufflenet of openpifpaf and the hr-former. We made some training run with this two backbones and we have evalutated with a testset to find the best one to continue with. We used final weights of this different model as a checkpoint to start training our models, like that the model don't start with random weights and it can perform the behaviour easier and it just need to understand our heads.
 
@@ -217,7 +216,6 @@ Most of these options have default values and do not need to be set if otherwise
 
 
 # Results
-`Qualitative and Quantitative results of your experiments.`
 
 ## RESULTS with HR-FORMER after 30 epoch:
 
@@ -233,8 +231,8 @@ Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.031
 Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.064
 
 Final Results: 
-Mean Pixel Error [scaled] : 3.432623 
-Detection Rate [scaled]: 49.254017 %
+Mean Pixel Error: 3.432623 
+Detection Rate: 49.254017 %
 ```
 
 
@@ -259,8 +257,8 @@ Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.343
 Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.070
 Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.153
 
-Mean Pixel Error [scaled] : 3.126907 
-Detection Rate [scaled]: 62.110065 %
+Mean Pixel Error: 3.126907 
+Detection Rate: 62.110065 %
 ```
 
 
@@ -287,8 +285,8 @@ Evaluate annotation type *keypoints*
  Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.130
  Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.187
 
-Mean Pixel Error [scaled] : 2.939359 
-Detection Rate [scaled]: 60.617481 
+Mean Pixel Error: 2.939359 
+Detection Rate: 60.617481 
 ```
 
 
@@ -341,6 +339,11 @@ python3 -m openpifpaf.predict \
   voiture.jpg
 ```
 
+###############################################
+
+HERE ARE THE WEIGTHS: https://drive.google.com/drive/folders/1U3Xl_wtkL32DrRsVCbQr12HVaw8iHuJQ?usp=sharing
+
+################################################
 
 
 Example result:
