@@ -183,7 +183,7 @@ python -m openpifpaf.train --dataset carfusionkp --checkpoint=shufflenetv2k16-ap
 ```
 This perticular command uses our implemented CarFusion dataset with the preexisting ApolloCar 24kps shufflenet checkpoint.
 
-If we want to train the hr-former it will be:
+If we want to train the HR-Former model, the command will be:
 
 ```sh
 python -m openpifpaf.train --dataset carfusionkp --basenet=hrformer_t --hrformer-checkpoint==<path_of_weights> --carfusionkp-square-edge=769 --lr=0.00002 --momentum=0.95  --b-scale=5.0 --epochs=30 --lr-decay 25 27 --lr-decay-epochs=10  --weight-decay=1e-5 --weight-decay=1e-5  --val-interval 1 --loader-workers 16 --carfusionkp-upsample 2 --carfusionkp-bmin 2 --batch-size 8
