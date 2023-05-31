@@ -11,7 +11,9 @@ Two of the main models that have been developped and that we decided to focus on
 
 Our main goal in this project was to merge these two models such that anything inputted in OpenPifPaf would result in visible keypoints that would then be used in the second model to find the full position of the vehicles.
 
-Sadly, working with Occlusion-Net has proven to be way more difficult than we thought it would be, and therefore we had to resize our project and end it before the full implementation.
+Sadly, working with Occlusion-Net has proven to be way more difficult than we thought it would be, and therefore we had to resize our project and end it before the full implementation. The code of the Occlusion net was not very well documentate and the Issues on the github was gave up since years. 
+
+We decided to concentrate our effort to a code with a better documentation: Openpifpaf
 
 # Contribution Overview
 
