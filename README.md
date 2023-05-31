@@ -1,5 +1,5 @@
 # 2DCarPoseEstimation-Group57
-2DCarEstimation with HR Former in openpifpaf backbone with Carfusion dataset
+2DCarEstimation with HR Former backbone in openpifpaf with Carfusion dataset
 
 
 # Introduction
@@ -18,7 +18,7 @@ Sadly, working with Occlusion-Net has proven to be way more difficult than we th
 We have integrated the use of the OpenPifPaf code in our work, enhancing it by incorporating a High Resolution (HR) Transformer into the backbone of our algorithm. Further, we have modified the dataset to ensure a comprehensive representation of vehicles. This includes not just the visible parts, but also those parts that are typically obscured, thereby enabling a more accurate and holistic understanding of the subject.
 
 
-![Shema](https://media.arxiv-vanity.com/render-output/6205766/images/model.png)
+![Schema](https://media.arxiv-vanity.com/render-output/6205766/images/model.png)
 
 
 HRFormer is an architecture in machine learning that has been created recently and consists of a network branching out into multiple parallel lines. It is said to reduce both computational cost and memory and results in good performances when tested on the COCO dataset.
@@ -36,7 +36,7 @@ In the preparation of our goal, we implemented a CarFusion plugin in OpenPifPaf 
 # Experimental Setup
 
 
-We decided to find the best model backbone to adapt with the new dataset that we decided to use (see info below) so we took our attention to the shufflenet of openpifpaf and the hr-former. We made some training run with this two backbones and we have evalutated with a testset to find the best one to continue with. We used final weights of this different model as a checkpoint to start training our models, like that the model don't start with random weights and it can perform the behaviour easier and it just need to understand our heads.
+We decided to find the best model backbone to adapt with the new dataset that we decided to use (see info below) so we took our attention to the shufflenet of openpifpaf and the hr-former architecture. We made some training runs with these two backbones and we evalutated them with a testset to find the best one to continue with. We used checkpoints of these different models as initial values to start training our models, so the model doesn't start with random weights and can perform better and more easily, and it just needs to understand our heads.
 
 To know wich model is the best, we used some metrics:
 
@@ -50,7 +50,7 @@ AR measures the model's ability to detect instances of a specific category at va
 AP and AR are in range from 0 to 1, where a higher value indicates better performance.
 
 
- - We used also the Mean Pixel Error and Detection Rate to choose the best model.
+ - We also used the Mean Pixel Error and Detection Rate to choose the best model, which both have to do with the amount of cars detected in an image and the error between a found keypoint and its real position.
 
 
 
@@ -210,8 +210,40 @@ Similarly to other datasets, CarFusion options can be found here:
 
 Most of these options have default values and do not need to be set if otherwise needed.
 
+# How to run and predict with an image
+
+We have trained a few models that can be used in order to find these keypoints.
+The results will be explained further along the document, but in the meantime these checkpoints can be donwloaded here :
+https://drive.google.com/drive/folders/1U3Xl_wtkL32DrRsVCbQr12HVaw8iHuJQ?usp=sharing
+
+In order to test these checkpoints on an individual image, one can use the predict function.
+The command takes as input the checkpoint required, the directory to the output and of course the input image as parameters.
+
+```sh
+python3 -m openpifpaf.predict \
+  --checkpoint <path model> \
+  --save-all --image-output <path output> \
+  <path to image>
+```
+For a general test of the performances, one can use the eval function with the dataset as parameter and the checkpoint used.
+
+```sh
+python3 -m openpifpaf.eval --dataset=carfusionkp --checkpoint <path of the model>
+```
+
+For example, we can do: 
+
+```sh
+python3 -m openpifpaf.predict \
+  --checkpoint model/shufflenet_60epoch.pkl \
+  --save-all --image-output all-images/final_image.jpeg \
+  voiture.jpg
+```
 
 # Results
+
+As said earlier, we have trained several OpenPifPaf models with different architectures, all of them starting from a pretrained model.
+We used the available HR-Former tiny architecture checkpoint on ImageNet-1K and the ShuffleNetV2k checkpoint for ApolloCar 24 keypoints.
 
 ## RESULTS with HR-FORMER after 30 epoch:
 
@@ -264,8 +296,8 @@ Detection Rate: 62.110065 %
 <sup>Result of shufflnet train with 30 epoch</sup>
 </p>
 
-As seen in the results above, the shufflenet is really better to detect the car 62%>49% but is also better twice better in AP and AR.
-Therefore we decide to keep the shufflenet and to continue to train it.
+As seen in the results above, the Shufflenet is really better to detect the car 62%>49% but is also twice better in AP and AR.
+Therefore, we decided to keep the Shufflenet and to continue to train it.
 
 ## RESULTS with SHUFFLENET after 60 epoch
 
@@ -302,54 +334,27 @@ Detection Rate: 60.617481
 <sup>Result of shufflnet-24keypoints (1st image) and our model (2nd image)</sup>
 </p>
 
- There is some interesting results, it seems that our model became less powerfull to detect cars but it became very good in precision for long distance vehicule. We can see the different here with the model from openpifpaf and our, the closer car is not detected and only 2 cars are detected at the background but it detected very well.
+ There are some interesting results: it seems that our model became less powerful to detect cars but it became very good in precision for long distance vehicles. We can see the difference here with the model from OpenPifPaf and ours, the closest car is not detected and only 2 cars are detected in the background but they are detected very well.
  
- From the model trained with 30 epoch, we see that the Mean Pixel Error was higher that our new model but the detection rate was better and we have some ideas to explain it. The Mean Pixel Error is 0 when the model don't detect any car, it mean that the model tends to prefer to not detect a car if it's not very sure about it. It prefer to not showing it than showing a bad prediction. We could say that our final model is not better that the one with 30 epoch but if we check the average precision (AP) and the average recall (AR) everything is better, and even twice better for the precision and the recall above 75%.
+ From the model trained with 30 epochs, we see that the Mean Pixel Error was higher than our new model but the detection rate was better and we have some ideas to explain it. The Mean Pixel Error is 0 when the model doesn't detect any car, it means that the model tends to prefer to not detect a car if it is not very sure about it. It prefers not to show it rather than showing a bad prediction. We could say that our final model is not better that the one with 30 epochs but if we check the average precision (AP) and the average recall (AR) everything is better, and even twice better for the precision and the recall above 75%.
 
- Compare to the original model from openpifpaf, we have some much less cars detected but we have most of the time better result in long distance detection in cross road intersection, that's because our dataset is essentially cross road intersection.  
+ Compared to the original model from OpenPifPaf, we have some much less cars detected but we have most of the time better results in long distance detection in cross road intersections. That is because our dataset is essentially cross road intersections.  
 
- Our model is not good on normal road when the vehicule is behind other vehicule but perform well on cross road section with long distance vehicule. For some reason it not detect all the time car that are very close but as we can see on video, the model detect it the frame just after.
+ Our model is not good on normal road when the vehicle is behind other vehiclse but performs well on cross road section with long distance vehicles. For some reason, it does not detect all the time cars that are very close but as we can see on video, the model detects it the frame just after.
 
- See the video on this link to see some result that show what we said: 
+ See the video on this link to see some results that show what we said: 
  https://www.youtube.com/watch?v=DdKxXEWcQBM
 
 # Conclusion
-We saw here that using a hr-former was not adapted in our case and wasn't very efficient with our dataset. Our dataset was not very adapted to train a model on a normal road but has very good potential to increase the performance of precision of a autonomous vehicule at cross street section. 
-We could improve the model with more epoch and the best would be to mix two type of data, a dataset on the road and this dataset that is road cross section. 
-And to get better result on video, we could use something as a kalman-filter to keep the value of the keypoints when the car is moving.
+Although we could not achieve our goal results, we have come across interesting results.
+We saw here that using a HR-Former was not adapted in our case and wasn't very efficient with our dataset. Our dataset was not very adapted to train a model on a normal road but has very good potential to increase the performance of precision of an autonomous vehicule at cross street section.
+There are many ways in which we could improve our model, that would require more resources and time.
+We could first improve the model by training in for more epochs, with hopefully good results along the way.
+We have decided to use smaller versions of HR-Former and ShuffleNet and this of course results in less optimal solutions. With more time and resources, we could train our model with larger architectures for more robust solution.
+Also, using the full dataset instead of only part of it would result in a greater diversity of situations and thus better performances. We could also mix two types of data, a dataset on the road and this dataset that is road cross section for even better results.
+And to get better result on video, we could use something like a Kalman-filter to keep the value of the keypoints when the car is moving.
 
-
-
-# How to run and predict with an image
-
-- Put an image into the src folder and call it voiture.jpg
-
-go into src with the terminal and do:
-```sh
-python3 -m openpifpaf.predict \
-  --checkpoint <path model> \
-  --save-all --image-output <path output> \
-  <path image>
-```
-```sh
-python3 -m openpifpaf.eval --dataset=carfusionkp --checkpoint <path of the model>
-```
-
-for example we can do: 
-
-```sh
-python3 -m openpifpaf.predict \
-  --checkpoint model/shufflenet_60epoch.pkl \
-  --save-all --image-output all-images/final_image.jpeg \
-  voiture.jpg
-```
-
-###############################################
-
-HERE ARE THE WEIGTHS: 
-https://drive.google.com/drive/folders/1U3Xl_wtkL32DrRsVCbQr12HVaw8iHuJQ?usp=sharing
-
-################################################
+In general, we may not have the best results, but we learnt the hard way that machine learning is difficult and requires time and expertise in order to obtain very good results. While we may not have succeeded in implementing the Occlusion-Net as we wished, due to its complexity, we are still happy that we managed to implement and use the HR-Former backbone and the CarFusion dataset.
 
 
 Example result:
