@@ -234,7 +234,7 @@ Final Results:
 Mean Pixel Error [scaled] : 3.432623 
 Detection Rate [scaled]: 49.254017 %
 ```
-<<<<<<< HEAD
+
 
 <p align="center">
 <img src="images/hrformer.jpeg", width="900">
@@ -243,9 +243,6 @@ Detection Rate [scaled]: 49.254017 %
 </p>
 
 
-=======
-
->>>>>>> d4be15d6f0362331ab1eb434e52b0db6e6ff8f87
 ## RESULTS with SHUFFLENET after 30 epoch:
 
 Evaluate annotation type *keypoints*
@@ -264,13 +261,13 @@ Mean Pixel Error [scaled] : 3.126907
 Detection Rate [scaled]: 62.110065 %
 ```
 
-<<<<<<< HEAD
+
 <p align="center">
 <img src="images/shufflenet_v1.jpeg", width="900">
 <br>
 <sup>Result of shufflnet train with 30 epoch</sup>
 </p>
-=======
+
 
 The keypoint detection task COCO is scored like an object detection task, with average precision (AP) and average recall (AR)
 
@@ -280,7 +277,7 @@ AP measures the accuracy and precision of the model's predictions for a specific
 AR measures the model's ability to detect instances of a specific category at various levels of precision. It calculates the recall at different levels of precision by varying a threshold for considering a prediction as a true positive.
 
 AP and AR are in range from 0 to 1, where a higher value indicates better performance.
->>>>>>> d4be15d6f0362331ab1eb434e52b0db6e6ff8f87
+
 
 As seen in the results above, the shufflenet is really better to detect the car 62%>49% but is also better twice better in AP and AR.
 
@@ -303,7 +300,7 @@ Evaluate annotation type *keypoints*
 Mean Pixel Error [scaled] : 2.939359 
 Detection Rate [scaled]: 60.617481 
 ```
-<<<<<<< HEAD
+
 
 There is some interesting result
 
@@ -314,8 +311,6 @@ There is some interesting result
 <sup>Result of shufflnet train with 60 epoch</sup>
 </p>
 
-=======
->>>>>>> d4be15d6f0362331ab1eb434e52b0db6e6ff8f87
 
 # Conclusion
 `here a short conclusion`
