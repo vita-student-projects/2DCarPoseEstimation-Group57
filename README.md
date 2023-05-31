@@ -171,19 +171,9 @@ python dataset.py --path_dir dataCarFusion/test/ --output_dir dataCarFusion/anno
 
 You can verify that the code worked correctly by checking if both test and train annotations have been created under src/openpiafpaf/dataCarFusion/annotations/.
 
-# Code
-
-`ENCORE A FAIRE : EXPLIQUER TRAIN ET LES OPTIONS, COMMENT UTILISER, PAREIL POUR INFERENCE`
+# Training
 
 Other important files that can be used are train.py and inference.py, both can be find in /src/openpifpaf/.
-
-The repository includes the following scripts:
-
-- `dataset.py`: Implements the dataset class for loading and preprocessing the dataset.
-- `train.py`: Provides the training script for the model using the dataset.
-- `inference.py`: Enables inference on new images using the trained model.
-
-The dataset.py has already been explained above.
 
 The training part of the model can be done with several base networks, datasets and checkpoints.
 
@@ -330,7 +320,7 @@ And to get better result on video, we could use something as a kalman-filter to 
 
 
 
-# How to run and test with an image
+# How to run and predict with an image
 
 - Put an image into the src folder and call it voiture.jpg
 
