@@ -5,7 +5,7 @@
 # Introduction
 
 This project aims to use machine learning and specifically state-of-the-art models in order to estimate vehicle's 2D positions on images and further on videos. This problem is very important in the autonomous vehicles' world and is therefore crucial in general.
-A 2D pose estimation model takes as input either and image or a video consisting of frames and outputs the pixel positions of each keypoint on the image. This can be used to visualize the frame of a car or further to transform these keypooints into 3D keypoints and model for a fully developped environment.
+A 2D pose estimation model takes as input either and image or a video consisting of frames and outputs the pixel positions of each keypoint on the image. This can be used to visualize the frame of a car or further to transform these keypoints into 3D keypoints and model for a fully developped environment.
 
 Two of the main models that have been developped and that we decided to focus on are OpenPifPaf and Occlusion-Net. The first can be used for various purposes such as human pose estimation but in this case also vehicle pose estimation. The second one is specifically used for vehicles and one of its main uses is to first find the visible keypoints of a car and then from these keypoints, find the occluded ones.
 
